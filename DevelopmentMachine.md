@@ -24,7 +24,7 @@ Hardware and setup of machine
     6. Create luks2 (i let the installer handle this point onward for `/` `/home` and `/var` and used the same password for ease):
       - Get luks id: `sudo cryptsetup luksUUID /dev/<volume group>/<logical volume>`
       - Unlock and map: `sudo cryptsetup open /dev/<volume group>/<logical volume> luks-<luksUUID>`
-    7. Create filesystem: `sudo mkfs.ext4 /dev/mapper/<luks2 mapped name>
+    7. Create filesystem: `sudo mkfs.ext4 /dev/mapper/<luks2 mapped name>`
     8. Modify `/etc/crypttab` and map luks-uuid to unlock at startup
     9. Modify `etc/fstab` and add mapped location to mount
 
