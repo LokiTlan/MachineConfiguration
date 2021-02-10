@@ -20,7 +20,7 @@ Hardware and setup of machine
     2. Created mdadm raid0: `sudo mdadm --create --verbose /dev/md0 --level=0 --raid-devices=2 /dev/sdx1 /dev/sdx1`
     3. Create physical volumes: `sudo pvcreate /dev/< sdx1 | raid0 >`
     4. Create volume groups: ` vgcreate <name> /dev/<physical volume from before> `
-    5. Create logical volume: `lvcreate -n <name> -L 10G <volume group name from before>`
+    5. Create logical volume: `lvcreate -n <name> -L <size><B | M | G | T> <volume group name from before>`
     6. Create luks2 (i let the installer handle this point onward for `/` `/home` and `/var` and used the same password for ease):
       - Get luks id: `sudo cryptsetup luksUUID /dev/<volume group>/<logical volume>`
       - Unlock and map: `sudo cryptsetup open /dev/<volume group>/<logical volume> luks-<luksUUID>`
