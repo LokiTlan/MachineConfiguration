@@ -5,7 +5,7 @@ Hardware and setup of machine
 - Power Supply: xxxxxxxxxxxxxxxxxxxxx
 - GPU: NVIDIA 1080ti
 - RAM: Kingston 3200 UECC - 4x 32 gb
-- Storage: Western Digitial sn850 - 1tb | radi0 - 2x Samsung 860 EVO - 1 tb
+- Storage: Western Digitial sn850 - 1tb | 2x Samsung 860 EVO - 1 tb
 - Backup: Western Digital Gold - 6 tb
 - OS: Fedora netinstaller with lxce desktop
 
