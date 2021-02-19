@@ -7,7 +7,7 @@ Hardware and setup of machine
 - RAM: Kingston 3200 UECC - 4x 32 gb
 - Storage: Western Digitial sn850 - 1tb | 2x Samsung 860 EVO - 1 tb
 - Backup: Western Digital Gold - 6 tb
-- OS: Fedora netinstaller with lxce desktop
+- OS: Fedora minimal
 
 - Storage:
   - mdadm chosen since it handles raid even though lvm can now be used directly
@@ -22,6 +22,7 @@ Hardware and setup of machine
     4. Create volume groups: ` vgcreate <name> /dev/<physical volume from before> `
     5. Create logical volume: `lvcreate -n <name> -L <size><B | M | G | T> <volume group name from before>`
     6. Create luks2 (i let the installer handle this point onward for `/` `/home` and `/var` and used the same password for ease):
+      - Create luks2: `sudo cryptsetup --type luks2 /dev/<path>`
       - Get luks id: `sudo cryptsetup luksUUID /dev/<volume group>/<logical volume>`
       - Unlock and map: `sudo cryptsetup open /dev/<volume group>/<logical volume> luks-<luksUUID>`
     7. Create filesystem: `sudo mkfs.ext4 /dev/mapper/<luks2 mapped name>`
